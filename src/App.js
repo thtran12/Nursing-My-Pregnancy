@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Component } from "react";
+import Header from "./components/header/Header";
+import MainPage from "./components/main/mainPage";
+import Login from "./components/login-page/Login";
+import Register from "./components/register-page/Register";
+import Dashboard from "./components/dashboard/Dashboard";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      user: null,
+    };
+  }
+
+  render() {
+    const user = this.state.user;
+
+    return (
+      <Router>
+        <div className="App">
+          <Header user={user}/>
+          <Switch>
+            <Route exact path="/" render={() => user ? <Dashboard/> : <MainPage/>}></Route>
+            <Route exact path="/login" render={() => <Login />}></Route>
+            <Route exact path="/register" render={() => <Register />}></Route>
+            {/* <Route exact path="/chatroom" render={() => <ChatRoom/>}></Route>
+            <Route exact path="/video" render={() => <VideoChat/>}></Route> */}
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
+
