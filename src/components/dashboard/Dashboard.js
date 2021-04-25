@@ -113,19 +113,18 @@ class Dashboard extends Component {
                       {displayDate}
                     </Button>
                   </Link>
-                  <Link to="/">
-                    <Button
-                      className="mt-4"
-                      variant="outline-info"
-                      type="submit"
-                    >
-                      Schedule another appointment
+                  <Form>
+                    <Form.Group controlId="formGroupDate">
+                      <Form.Label>Schedule Appointment</Form.Label>
+                      <Form.Control
+                        type="datetime-local"
+                        value="2021-04-25T12:00:00"
+                      />
+                    </Form.Group>
+                    <Button variant="info" type="submit">
+                      Submit
                     </Button>
-                  </Link>
-                  {/* <p>
-                You have no appointments scheduled. Please schedule one below
-                using our scheduler.
-              </p> */}
+                  </Form>
                 </div>
               ) : (
                 <div className="appts dashboardBox">
