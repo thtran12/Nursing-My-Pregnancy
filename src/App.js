@@ -43,7 +43,8 @@ class App extends Component {
         .get();
       const role = snap.docs[0].data().role;
       const name = snap.docs[0].data().name;
-      this.setState({ user: { ...user, role, name } });
+      const numWeeks = snap.docs[0].data().numWeeks;
+      this.setState({ user: { ...user, role, name, numWeeks }});
     } catch (err) {
       console.log(err);
     }
@@ -58,7 +59,7 @@ class App extends Component {
         <div className="App">
           <Header user={user}/>
           <Switch>
-            <Route exact path="/" render={() => user ? <Dashboard/> : <MainPage/>}></Route>
+            <Route exact path="/" render={() => user && user.role ? <Dashboard user={user}/> : <MainPage/>}></Route>
             <Route exact path="/login" render={() => <Login />}></Route>
             <Route exact path="/register" render={() => <Register />}></Route>
             <Route exact path="/chatroom" render={() => <VideoChat/>}></Route>

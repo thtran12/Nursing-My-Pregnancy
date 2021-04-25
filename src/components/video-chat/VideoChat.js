@@ -101,27 +101,27 @@ function VideoChat(props) {
       </div>
       <div className="col-6">
         <div className="video-container">
-          <div className="video">
             {stream && (
+              <div className="video mt-2">
               <video
                 playsInline
                 muted
                 ref={myVideo}
                 autoPlay
-                style={{ width: "300px" }}
+                style={{ width: "400px" }}
               />
+              </div>
             )}
-          </div>
-          <div className="video">
             {callAccepted && !callEnded ? (
+              <div className="video mb-2">
               <video
                 playsInline
                 ref={userVideo}
                 autoPlay
-                style={{ width: "300px" }}
+                style={{ width: "400px" }}
               />
+              </div>
             ) : null}
-          </div>
         </div>
         <div className="container call">
           <CopyToClipboard text={me}>

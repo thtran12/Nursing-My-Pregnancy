@@ -11,6 +11,10 @@
 	margin-top: 10rem;
 }
 
+.video{
+	margin: auto;
+}
+
 .call {
 	display: flex;
 	flex-direction: row;

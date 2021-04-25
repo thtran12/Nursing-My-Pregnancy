@@ -1,8 +1,9 @@
 import { Component } from "react";
-import Button from 'react-bootstrap/Button'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { Link } from "react-router-dom";
 
 // Get Started -> Render Register Page!
 
@@ -15,7 +16,10 @@ class MainPage extends Component {
           <Col>
           <h1>A Smoother Pregnancy</h1>
           <h6>Nursing My Pregnancy helps ensure a smooth and safe pregnancy. Connect virtually and bring life.</h6>
+          <Link to="/register">
           <Button variant="outline-info">Get Started</Button>{' '}
+          </Link>
+          
           
           </Col>
           
