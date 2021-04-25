@@ -1,14 +1,14 @@
-import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
-import TextField from "@material-ui/core/TextField";
-import AssignmentIcon from "@material-ui/icons/Assignment";
-import PhoneIcon from "@material-ui/icons/Phone";
+import Button from "react-bootstrap/Button";
+import { MdAssignment } from "react-icons/md";
+import { ImPhone, ImPhoneHangUp } from "react-icons/im";
 import React, { useEffect, useRef, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Peer from "simple-peer";
 import io from "socket.io-client";
 import "./VideoChat.css";
 import ChatRoom from "../../components/chat-room/ChatRoom";
+import ChatInfo from "../../components/chat-info/ChatInfo";
 
 const socket = io.connect("http://localhost:5000");
 
@@ -95,10 +95,10 @@ function VideoChat(props) {
   };
 
   return (
-    <div className="main-container mt-5">
-    <div className="col-3">
-      <ChatRoom/>
-    </div>
+    <div className="main-container">
+      <div className="col-3 mt-5">
+        <ChatRoom />
+      </div>
       <div className="col-6">
         <div className="video-container">
           <div className="video">
@@ -124,37 +124,30 @@ function VideoChat(props) {
           </div>
         </div>
         <div className="container call">
-          <CopyToClipboard text={me} >
-            <Button
-              variant="contained"
-              color="primary"
-              startIcon={<AssignmentIcon fontSize="large" />}
-            >
-              Copy ID
+          <CopyToClipboard text={me}>
+            <Button variant="info">
+              <MdAssignment style={{ color: "white" }} />
             </Button>
           </CopyToClipboard>
 
-          <TextField
-            id="filled-basic"
-            label="ID to call"
-            variant="filled"
+          <input
             value={idToCall}
             onChange={(e) => setIdToCall(e.target.value)}
           />
           <div className="call-button">
             {callAccepted && !callEnded ? (
-              <div className="container call">
-              <Button variant="contained" color="secondary" onClick={leaveCall}>
-                End Call
-              </Button>
-              </div>
+                <IconButton
+                aria-label="hang-up"
+                  onClick={leaveCall}
+                >
+                  <ImPhoneHangUp style={{ color: "#17a2b8" }}/>
+                </IconButton>
             ) : (
               <IconButton
-                color="primary"
                 aria-label="call"
                 onClick={() => callUser(idToCall)}
               >
-                <PhoneIcon fontSize="large"/>
+                <ImPhone style={{ color: "#17a2b8" }}/>
               </IconButton>
             )}
           </div>
@@ -163,15 +156,15 @@ function VideoChat(props) {
           {receivingCall && !callAccepted ? (
             <div className="caller">
               <h1>{name} is calling...</h1>
-              <Button variant="contained" color="primary" onClick={answerCall}>
+              <Button variant="info" onClick={answerCall}>
                 Answer
               </Button>
             </div>
           ) : null}
         </div>
       </div>
-      <div className="col-3">
-            User's info/notes 
+      <div className="col-3 mt-5">
+        <ChatInfo user={props.user}/>
       </div>
     </div>
   );

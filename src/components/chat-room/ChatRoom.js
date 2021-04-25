@@ -2,7 +2,7 @@ import "./ChatRoom.css";
 import { useState } from "react";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import ChatMessage from "./chat-message/ChatMessage";
-import { Form, FormGroup, Button } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 
 import firebase from "../../firebase/firebase";
 
@@ -11,7 +11,7 @@ const auth = firebase.auth();
 
 function ChatRoom() {
   const messagesRef = firestore.collection("messages");
-  const query = messagesRef.orderBy("createdAt").limit(25);
+  const query = messagesRef.orderBy("createdAt");
   const [messages] = useCollectionData(query, { idField: "id" });
 
   const [formValue, setFormValue] = useState("");

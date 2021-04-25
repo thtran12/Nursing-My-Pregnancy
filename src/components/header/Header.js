@@ -23,7 +23,7 @@ class Header extends Component {
             <Nav className="mr-auto"></Nav>
             <Nav>
               {user ? <Nav.Link href="/">Dashboard</Nav.Link> : <div></div>}
-              <Nav.Link href="./resources">Resources</Nav.Link>
+              {user ? <Nav.Link href="/resources">Resources</Nav.Link> : <div></div>}
               {user ? (
                 <Nav.Link onClick={() => this.logout()}>Sign Out</Nav.Link>
               ) : (
