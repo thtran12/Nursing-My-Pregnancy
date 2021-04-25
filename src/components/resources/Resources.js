@@ -74,7 +74,9 @@ docRef.get().then((doc) => {
                     <p>{nurse} is a nurse located in {location}. </p>   
                     <div className = "notesReceived">
                         <h6>Notes from {nurse}</h6>
-                        <p>lorem ipsum</p>
+                        <p>Aim for 30 minutes of exercise. Listen to your body; if you do not feel well, skip exercises.</p>
+                        <p>You're doing great, {fname}! Excited to know the gender!</p>
+
                         <Form>
                             <Form.Group controlId="formGroupMsg">
                                 <Form.Label>Leave a Note</Form.Label>
@@ -89,6 +91,15 @@ docRef.get().then((doc) => {
                     <div className = "appts dashboardBox">
                     <h5>Upcoming Appointments</h5>
                     <p>You have no appointments scheduled. Please schedule one below using our scheduler.</p>
+                    <Form>
+                            <Form.Group controlId="formGroupDate">
+                                <Form.Label>Schedule Appointment</Form.Label>
+                                <Form.Control type="datetime-local" value="2021-04-25T12:00:00" />
+                            </Form.Group>
+                            <Button variant="info" type="submit">
+                                Submit
+                            </Button>
+                        </Form>
                 </div>
             </div>
         </div>
