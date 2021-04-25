@@ -41,22 +41,22 @@ class Login extends Component {
         <div className = "login">
         <Form onSubmit={(event) => this.onLoginSubmitted(event)}>
           <FormGroup>
-            <Form.Label>Email Address</Form.Label>
+            <Form.Label className="label">Email Address</Form.Label>
             <input
               value={email}
               onChange={(e) => this.setState({ email: e.target.value })}
-              className="form-control"
+              className="form-control transparent"
               type="email"
               required
             />
           </FormGroup>
 
           <FormGroup>
-            <Form.Label>Password</Form.Label>
+            <Form.Label className="label">Password</Form.Label>
             <input
               value={password}
               onChange={(e) => this.setState({ password: e.target.value })}
-              className="form-control"
+              className="form-control transparent"
               type="password"
               required
             />

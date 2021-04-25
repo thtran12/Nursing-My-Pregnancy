@@ -12,14 +12,8 @@
 }
 
 .chatbox-input {
-  line-height: 1.5;
   font-size: 0.8rem;
   background: white;
-  color: black;
-}
-
-.submit-button {
-  font-size: 0.8rem;
 }
 
 .messages-scroll {
