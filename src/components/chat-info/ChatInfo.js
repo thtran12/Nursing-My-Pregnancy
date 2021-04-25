@@ -25,7 +25,7 @@ function ChatInfo(props) {
       const snap = await firestore
         .collection("visits")
         // .where("user","==",userRoom.userId)
-        .orderBy("date")
+        .orderBy("date","desc")
         .limit(1)
         .get();
       setVisit(snap.docs[0].data());
@@ -34,22 +34,21 @@ function ChatInfo(props) {
     }
   };
 
-  // const submit = async () => {
-  //   try {
-  //     const date = Date.now();
-  //     const snap = await firestore
-  //       .collection("visits")
-  //       .doc()
-  //       .set({
-  //         date,
-  //         user,
-  //         nurse,
-  //         notes: goal
-  //       })
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
+  const submit = async () => {
+    try {
+      const date = Date.now();
+      await firestore
+        .collection("visits")
+        .doc()
+        .set({
+          date,
+          notes: goal
+        })
+    } catch (err) {
+      console.log(err);
+    }
+    setGoal("");
+  };
 
   return (
     <>
@@ -79,7 +78,7 @@ function ChatInfo(props) {
               type="text"
             />
           </InputGroup>
-          <Button className="mt-4" variant="info" block>
+          <Button onClick={submit} className="mt-4" variant="info" block>
             Submit
           </Button>
         </div>

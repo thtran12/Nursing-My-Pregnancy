@@ -130,7 +130,7 @@ class Dashboard extends Component {
               ) : (
                 <div className="appts dashboardBox">
                   <h5>Upcoming Appointments</h5>
-                  <Link to={"/chatroom/" + "1ARGzyA3BKVlJD8dFid2L7w91DN2"}>
+                  <Link to={"/chatroom/" + "ZVQtkhFFrtf1GBLCMuUjW1ESCaD3"}>
                     <Button className="mt-2" variant="info" type="submit">
                       {displayDate}
                     </Button>
