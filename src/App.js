@@ -6,7 +6,10 @@ import Login from "./components/login-page/Login";
 import Register from "./components/register-page/Register";
 import Dashboard from "./components/dashboard/Dashboard";
 import VideoChat from "./components/video-chat/VideoChat";
+import Resources from "./components/resources/Resources";
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import firebase from "./firebase/firebase";
 
@@ -57,7 +60,13 @@ class App extends Component {
             <Route exact path="/" render={() => user ? <Dashboard/> : <MainPage/>}></Route>
             <Route exact path="/login" render={() => <Login />}></Route>
             <Route exact path="/register" render={() => <Register />}></Route>
+<<<<<<< HEAD
             <Route exact path="/chatroom" render={() => <VideoChat/>}></Route>
+=======
+            <Route exact path="/resources" render={() => <Resources />}></Route>
+            {/* <Route exact path="/chatroom" render={() => <ChatRoom/>}></Route>
+            <Route exact path="/video" render={() => <VideoChat/>}></Route> */}
+>>>>>>> nat
           </Switch>
         </div>
       </Router>

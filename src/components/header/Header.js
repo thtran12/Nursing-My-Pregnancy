@@ -1,10 +1,7 @@
 import { Component } from "react";
-import {
-  withRouter,
-  Link,
- } from 'react-router-dom';
-
-import firebase from "../../firebase/firebase";
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
+import '../../App.css';
 
 class Header extends Component {
   
@@ -14,20 +11,23 @@ class Header extends Component {
   }
 
   render() {
-    const user = this.props.user;
     return (
-      <>
-        {user ? (
-          <button className="sign-out" onClick={() => this.logout()}>
-            Sign Out
-          </button>
-        ) : (
-          <Link to="/login">
-            <button className="sign-out">Sign In</button>
-          </Link>
-        )}
-      </>
-    );
+    <div>
+  <Navbar collapseOnSelect expand="md" bg="info" variant="dark">
+  <Navbar.Brand href="#home">Nursing My Pregnancy</Navbar.Brand>
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Collapse id="responsive-navbar-nav">
+    <Nav className="mr-auto">
+    </Nav>
+    <Nav>
+      <Nav.Link href="">Dashboard</Nav.Link>
+      <Nav.Link href="">Resources</Nav.Link>
+      <Nav.Link href="">Sign In</Nav.Link>
+    </Nav>
+  </Navbar.Collapse>
+</Navbar>
+  </div>   
+      );
   }
 }
 
