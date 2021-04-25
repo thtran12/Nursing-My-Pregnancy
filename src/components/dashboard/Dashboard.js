@@ -8,9 +8,9 @@ const firestore = firebase.firestore();
 
 let todayDate = new Date();
 let displayDate =
-  todayDate.getDate() +
+  (todayDate.getMonth() + 1)+
   " / " +
-  todayDate.getMonth() +
+  todayDate.getDate() +
   " / " +
   todayDate.getFullYear();
 
@@ -52,7 +52,7 @@ class Dashboard extends Component {
   render() {
     const { user, nurse, steps } = this.state;
     return (
-      <div>
+      <div className="Center">
         <Row>
           <div className="dashboard">
             <h3 className="greeting">Hello {user.name}!</h3>
@@ -89,7 +89,7 @@ class Dashboard extends Component {
                   </p>
                   <div className="notesReceived">
                     <h6>Notes from {nurse && nurse.name}</h6>
-                    <p>lorem ipsum</p>
+                    <p>You're doing great! Keep it up.</p>
                     <Form>
                       <Form.Group controlId="formGroupMsg">
                         <Form.Label>Leave a Note</Form.Label>

@@ -88,6 +88,7 @@
   color: #365367;
   border-radius: 5px;
   padding: 1em;
+  margin-top: 3em;
 }
 
 .dashboard h3,h4,h5,h6{
@@ -104,19 +105,30 @@
   border-radius: 5px;
   margin: 1em;
   padding: 1em;
+  overflow: scroll;
 }
 
 .dashboardBox h3,h4,h5,h6{
   font-weight: 800;
 }
 
+.dashboardHeader{
+margin-left: 1em;
+}
+
 .dashboardText{
   display: flex;
   justify-content: space-between;
+  margin-left: 1em;
+}
+
+.dailyCheck ul{
+  padding: 0;
 }
 
 .greeting{
   text-align: left;
+  margin-left: 16px;
 }
 
 .dailyCheck{
