@@ -95,7 +95,7 @@ function VideoChat(props) {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="main-container mt-5">
     <div className="col-3">
       <ChatRoom/>
     </div>
@@ -143,9 +143,11 @@ function VideoChat(props) {
           />
           <div className="call-button">
             {callAccepted && !callEnded ? (
+              <div className="container call">
               <Button variant="contained" color="secondary" onClick={leaveCall}>
                 End Call
               </Button>
+              </div>
             ) : (
               <IconButton
                 color="primary"

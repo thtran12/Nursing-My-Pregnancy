@@ -27,8 +27,8 @@ function ChatRoom() {
   };
 
   return (
-    <div class="chat-container col-12">
-      <div class="messages-container messages-scroll">
+    <div className="chat-container col-12">
+      <div className="messages-container messages-scroll">
         {messages &&
           messages.map((msg) => <ChatMessage key={msg.id} message={msg}/>)}
       </div>

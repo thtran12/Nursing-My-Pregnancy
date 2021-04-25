@@ -1,5 +1,6 @@
+import "./Login.css";
 import { Component } from "react";
-import { Container, Form, FormGroup, Button } from "react-bootstrap";
+import { Form, FormGroup, Button } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
 
 import firebase from "../../firebase/firebase";
@@ -34,7 +35,7 @@ class Login extends Component {
     const { email, password } = this.state;
 
     return (
-      <Container className="col-4 main">
+      <div className="container col-4 center">
         <Form onSubmit={(event) => this.onLoginSubmitted(event)}>
           <FormGroup>
             <Form.Label>Email Address</Form.Label>
@@ -62,7 +63,7 @@ class Login extends Component {
             Login
           </Button>
         </Form>
-      </Container>
+      </div>
     );
   }
 }
