@@ -62,7 +62,7 @@ class App extends Component {
             <Route exact path="/" render={() => user && user.role ? <Dashboard user={user}/> : <MainPage/>}></Route>
             <Route exact path="/login" render={() => <Login />}></Route>
             <Route exact path="/register" render={() => <Register />}></Route>
-            <Route exact path="/chatroom" render={() => <VideoChat/>}></Route>
+            <Route exact path="/chatroom/:userId" render={() => <VideoChat/>}></Route>
             <Route exact path="/resources" render={() => <Resources />}></Route>
           </Switch>
           <Footer />
