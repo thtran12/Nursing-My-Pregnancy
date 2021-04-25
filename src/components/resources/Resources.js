@@ -1,16 +1,53 @@
 import { Component } from "react";
 import { Accordion, Button, Card, Form, Row} from "react-bootstrap";
+import firebase from "../../firebase/firebase.js"
 import '../../App.css';
 
-
+//Code below is for dashboard!
 let fname = "Annie";
 let nurse = "Darlene";
 let location = "San Francisco, California";
-let numWeeks = 5;
+let numWeeks = 37;
 let todayDate = new Date();
-let displayDate = todayDate.getDate() + " / " + todayDate.getMonth() + " / " + todayDate.getFullYear();
+let displayDate = (todayDate.getMonth()+1)  + " / " + todayDate.getDate() + " / " + todayDate.getFullYear();
+let weekDatabase;
+
+function getWeek(){
+    if (numWeeks < 4) weekDatabase = "week1-3";
+    else if (numWeeks < 9) weekDatabase = "week4-8";
+    else if (numWeeks < 14) weekDatabase = "week9-13";
+    else if (numWeeks < 17) weekDatabase = "week14-16";
+    else if (numWeeks < 21) weekDatabase = "Week17-20";
+    else if (numWeeks < 25) weekDatabase = "Week21-24";
+    else if (numWeeks < 28) weekDatabase = "week24-27";
+    else if (numWeeks < 32) weekDatabase = "week28-32";
+    else if (numWeeks < 37) weekDatabase = "week32-36";
+    else weekDatabase = "week-delivery";
+    return weekDatabase;
+}
 
 class Resources extends Component {
+    constructor() {
+        super();
+        this.state = {
+          checklist: ["test"],
+        };
+      }
+
+      
+    componentDidMount() {
+
+        var db = firebase.firestore();
+        var docRef = db.collection("weeks").doc(getWeek());
+
+docRef.get().then((doc) => {
+    console.log("Cached document data:", doc.data());
+    this.setState({checklist: doc.data().steps})
+}).catch((error) => {
+    console.log("Error getting cached document:", error);
+});
+      }
+
   render(){
     return <div>
 
@@ -28,8 +65,8 @@ class Resources extends Component {
                 <div className = "dailyCheck dashboardBox">
                     <h5>Daily Check-In</h5>
                     <ul>
-                        <li>Pregnancy Test</li>
-                    </ul>
+                    {this.state.checklist.map(itemInChecklist => (<li>{itemInChecklist}</li>))}
+            </ul>
                 </div>
 
                 <div className = "profile dashboardBox">

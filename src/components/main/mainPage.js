@@ -25,7 +25,7 @@ class MainPage extends Component {
         </Row>
       </Container>
 
-    </div>;
+    </div>
   }
 }
 

@@ -2,6 +2,7 @@
   padding: none;
   margin: none;
   list-style: none;
+  list-style-type: none;
 }
 
 .App {
@@ -121,6 +122,15 @@
 
 .dailyCheck{
   width: 25vw;
+  overflow: scroll;
+}
+
+.dailyCheck ul{
+  padding: 0;
+}
+
+.dailyCheck li{
+  margin-top: 10px;
 }
 
 .profile{

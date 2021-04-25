@@ -40,10 +40,6 @@ class Register extends Component {
     return (
       <div className="Container Center">
 
-
-
-
-
         <Row className="Center"><h1>Register</h1></Row>
         <div className = "register">
         <Form onSubmit={(event) => this.onRegisterSubmitted(event)}>
