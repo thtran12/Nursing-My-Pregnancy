@@ -8,6 +8,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import Peer from "simple-peer";
 import io from "socket.io-client";
 import "./VideoChat.css";
+import ChatRoom from "../../components/chat-room/ChatRoom";
 
 const socket = io.connect("http://localhost:5000");
 
@@ -20,7 +21,7 @@ function VideoChat(props) {
   const [callAccepted, setCallAccepted] = useState(false);
   const [idToCall, setIdToCall] = useState("");
   const [callEnded, setCallEnded] = useState(false);
-  const [name, setName] = useState(props.user.name);
+  const [name, setName] = useState();
 
   const myVideo = useRef();
   const userVideo = useRef();
@@ -94,8 +95,11 @@ function VideoChat(props) {
   };
 
   return (
-    <>
-      <div className="container">
+    <div className="container mt-5">
+    <div className="col-3">
+      <ChatRoom/>
+    </div>
+      <div className="col-6">
         <div className="video-container">
           <div className="video">
             {stream && (
@@ -119,8 +123,8 @@ function VideoChat(props) {
             ) : null}
           </div>
         </div>
-        <div className="call">
-          <CopyToClipboard text={me} style={{ marginBottom: "2rem" }}>
+        <div className="container call">
+          <CopyToClipboard text={me} >
             <Button
               variant="contained"
               color="primary"
@@ -164,7 +168,10 @@ function VideoChat(props) {
           ) : null}
         </div>
       </div>
-    </>
+      <div className="col-3">
+            User's info/notes 
+      </div>
+    </div>
   );
 }
 

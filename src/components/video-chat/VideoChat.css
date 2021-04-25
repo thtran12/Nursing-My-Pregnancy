@@ -1,11 +1,11 @@
 .container {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 }
 
 .video-container {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column-reverse;
 	justify-content: center;
 	align-content: center;
 	margin-top: 10rem;
@@ -14,7 +14,6 @@
 .call {
 	display: flex;
 	flex-direction: row;
-	margin-right: 5rem;
 	border-radius: 5px;
 	padding: 2rem;
 	justify-content: center;
@@ -23,7 +22,6 @@
 
 .call-button {
 	text-align: center;
-	margin-top: 2rem;
 }
 
 .caller {
