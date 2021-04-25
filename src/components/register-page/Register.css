@@ -1,14 +1,15 @@
-.center{
-    text-align: center;
-    align-items: center;
-}
-
-.login{
+.register{
     position: absolute;
     top: 30%;
-    width: 35vw;
+    width: 50vw;
     background-color: #f7f7f7;
     border-radius: 5px;
     border: solid 1px #dfdfdf;
     padding: 1em;
+}
+
+@media only screen and (max-width: 1200px) {
+    .register{
+        width: 90%;
+    }
 }

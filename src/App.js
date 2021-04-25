@@ -1,6 +1,7 @@
 import "./App.css";
 import { Component } from "react";
 import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 import MainPage from "./components/main/mainPage";
 import Login from "./components/login-page/Login";
 import Register from "./components/register-page/Register";
@@ -63,6 +64,7 @@ class App extends Component {
             <Route exact path="/chatroom" render={() => <VideoChat/>}></Route>
             <Route exact path="/resources" render={() => <Resources />}></Route>
           </Switch>
+          <Footer />
         </div>
       </Router>
     );

@@ -11,10 +11,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// ReactDOM.render(
-//   <div>
-//     <hi>Hello Natisha!</hi>
-//   </div>,
-//   document.getElementById("root")
-// );

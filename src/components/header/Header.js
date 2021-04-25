@@ -5,10 +5,10 @@ import '../../App.css';
 
 class Header extends Component {
   
-  logout() {
-    firebase.auth().signOut();
-    this.props.history.push("/");
-  }
+  // logout() {
+  //   firebase.auth().signOut();
+  //   this.props.history.push("/");
+  // }
 
   render() {
     return (
@@ -31,4 +31,4 @@ class Header extends Component {
   }
 }
 
-export default withRouter(Header);
+export default Header;

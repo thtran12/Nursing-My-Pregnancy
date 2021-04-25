@@ -1,6 +1,6 @@
 import "./Login.css";
 import { Component } from "react";
-import { Form, FormGroup, Button } from "react-bootstrap";
+import { Form, FormGroup, Button, Row } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
 
 import firebase from "../../firebase/firebase";
@@ -35,7 +35,10 @@ class Login extends Component {
     const { email, password } = this.state;
 
     return (
-      <div className="container col-4 center">
+
+<div className="Container Center">
+        <Row className="Center"><h1>Sign In</h1></Row>
+        <div className = "login">
         <Form onSubmit={(event) => this.onLoginSubmitted(event)}>
           <FormGroup>
             <Form.Label>Email Address</Form.Label>
@@ -59,11 +62,13 @@ class Login extends Component {
             />
           </FormGroup>
 
-          <Button variant="outline-secondary" block type="submit">
-            Login
+          <Button variant="info" block type="submit">
+            Sign In
           </Button>
         </Form>
-      </div>
+        </div>
+</div>
+
     );
   }
 }

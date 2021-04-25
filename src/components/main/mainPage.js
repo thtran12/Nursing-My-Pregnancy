@@ -4,6 +4,8 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
+// Get Started -> Render Register Page!
+
 class MainPage extends Component {
   render() {
     return <div>
@@ -12,8 +14,9 @@ class MainPage extends Component {
         <Row className = "additionalSpace">
           <Col>
           <h1>A Smoother Pregnancy</h1>
-          <p>Nursing My Pregnancy helps ensure a smooth and safe pregnancy. Connect virtually and bring life.</p>
+          <h6>Nursing My Pregnancy helps ensure a smooth and safe pregnancy. Connect virtually and bring life.</h6>
           <Button variant="outline-info">Get Started</Button>{' '}
+          
           </Col>
           
           <Col>
@@ -22,10 +25,6 @@ class MainPage extends Component {
         </Row>
       </Container>
 
-      <div className = "stickyFooter">
-        <p>Made with ❤️ for Venus Hacks 2021</p>
-      
-      </div>
     </div>;
   }
 }
