@@ -1,8 +1,16 @@
 import { Component } from "react";
 
+let name = "Annie";
 class Dashboard extends Component {
   render() {
-    return <div>Dashboard</div>;
+    return <div>Dashboard
+
+
+    
+
+
+
+    </div>;
   }
 }
 
