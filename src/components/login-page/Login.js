@@ -38,28 +38,28 @@ class Login extends Component {
       <div className="container col-4 center">
         <Form onSubmit={(event) => this.onLoginSubmitted(event)}>
           <FormGroup>
-            <Form.Label>Email Address</Form.Label>
+            <Form.Label className="label">Email Address</Form.Label>
             <input
               value={email}
               onChange={(e) => this.setState({ email: e.target.value })}
-              className="form-control"
+              className="form-control transparent"
               type="email"
               required
             />
           </FormGroup>
 
           <FormGroup>
-            <Form.Label>Password</Form.Label>
+            <Form.Label className="label">Password</Form.Label>
             <input
               value={password}
               onChange={(e) => this.setState({ password: e.target.value })}
-              className="form-control"
+              className="form-control transparent"
               type="password"
               required
             />
           </FormGroup>
 
-          <Button variant="outline-secondary" block type="submit">
+          <Button variant="outline-info" block type="submit">
             Login
           </Button>
         </Form>
